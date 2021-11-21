@@ -1,0 +1,58 @@
+/* <section id= "highscores">
+        <div>
+            <h3>
+                "Your score is " + 
+
+            </h3>
+        </div>
+    </section> */
+    /* <section id="quiz" class="quiz-area">
+    <div class="quiz-area2">
+        <div class= "questions"></div>
+        <h2 id="question-intro">C</h2>
+    </div>
+    </div>
+    <button class = "btn">A</button>
+    <button class = "btn">B</button>
+    <button class = "btn">C</button>
+    <button class = "btn">D</button>
+        <div>
+        </div id="begin" class="begin-button">Begin Quiz
+    </div>
+</section>
+body { */
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-area {
+    background-color: rgb(195, 200, 211);
+    padding: 8px;
+    box-shadow: black;
+    box-shadow: 0 3px 6px 4px;
+    border: black solid;
+    width: 100%;
+    text-align: center;
+
+}
+
+ body {
+     padding: 2px;
+     display: flex;
+     align-items: center;
+     width: 100% ;
+     justify-content: center;
+     background-color: aquamarine;
+ }
+
+ .answer-btns {
+    display:table-row;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    text-align: center;
+   
+ }

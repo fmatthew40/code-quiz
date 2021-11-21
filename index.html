@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
+    <link rel = "stylesheet" href ="./assets/css/style.css">
+
 </head>
 <body>
-    
+<main>
+ 
+   
+
+    <!--Header that contains the highscore and timer-->
+
+    <header id="">
+        <div class="highscore">
+            <a href="">Highscores</a>
+        </div>
+
+        <div id="timer" class="timer-section">
+            Time Remaining: <span id="time-left">0</span>
+        </div>
+    </header>
+
+    <h1>Coding Quiz</h1>
+    <p> Try to answer the questions correctly.  Keep an eye on the timer.  If you answer incorrectly, time will be erased from the timer. </p> 
+        <!--main introduction area -->
+
+    <main class="main-area">
+        <div id="question-area" class="hidden">
+            <div id= "qu">Questions Here</div>
+            <div id= "answer-selection" class="answer-btns" >
+                <button class = "btn">A</button>
+                <button class = "btn">B</button>
+                <button class = "btn">C</button>
+                <button class = "btn">D</button>
+            </div>
+            </div>
+            <div class = "start">
+        <button id="begin-quiz">Begin Quiz</button>
+            </div>
+        </div>
+    </main>
+
+
+<script src = "./assets/js/script.js"></script>    
 </body>
 </html>
