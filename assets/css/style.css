@@ -26,7 +26,19 @@ body { */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.main-area {
+h1 {
+    text-align: center;
+ 
+}
+
+p {
+    text-align: center;
+}
+
+.timer-section {
+    text-align: right;
+}
+.mainarea {
     background-color: rgb(195, 200, 211);
     padding: 8px;
     box-shadow: black;
@@ -34,7 +46,25 @@ body { */
     border: black solid;
     width: 100%;
     text-align: center;
+    border-radius: 4px;
+    width: 100%;
+}
 
+.btn:hover {
+    background-color: rgb(161, 208, 211);
+}
+
+.srt-btn:hover {
+    background-color: rgb(161, 208, 211);
+}
+
+.srt-btn {
+    font-size: 36px;
+    align-items: center;
+}
+
+.btn {
+border-radius: 8px;   
 }
 
  body {
@@ -47,12 +77,16 @@ body { */
  }
 
  .answer-btns {
-    display:table-row;
-    display: flex;
+    display: grid;
     padding: 5px;
     align-items: center;
     justify-content: center;
     margin: 5px;
     text-align: center;
-   
+    height: 100px;
+    width: 100%;
+ }
+
+ .hidden {
+    display: none;
  }
