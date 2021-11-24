@@ -1,7 +1,7 @@
-
 var beginQuizButton = document.getElementById('begin-btn');
 var questionAnswerArea = document.getElementById('question-answers');
 var titleParagraph = document.getElementById('title-p');
+var results = document.getElementById('results');
 
 var timerEl = document.getElementById('timer');
 var timeRemaining;
@@ -12,7 +12,7 @@ let startTime = 79;
 
 var questionElement = document.getElementById('populate-question');
 var answerChoices = document.getElementById("populate-answers");
-var questionIndex = 0;
+let questionIndex = 0;
 var answers;
 
 
@@ -25,10 +25,13 @@ function openQuestionSection() {
    beginQuizButton.classList.add('question-answer')
    questionAnswerArea.classList.remove('question-answer');
    titleParagraph.classList.add('question-answer');
-   
+
+   loadQuestions();
 }
 
 var setTime = function () {
+    results.classList.remove('results');
+
         timeRemaining = 80;
     var checkTime = setInterval(function() {
         timerEl.innerText = timeRemaining;
@@ -39,32 +42,37 @@ var setTime = function () {
         }
        
         if (timeRemaining < 0) {
-            Score()
+            score()
             timerEl.innerText = 0
             clearInterval(checkTime)
         }
 
         }, 1000)
+
     }
-       setTime()
-       loadQuestions()
+       setTime();
+       setInterval();
+
+
+
     
 function loadQuestions() {
-    setInterval()
-    questionIndex++;
 
-    answers = questions[questionIndex].answer
+    questionIndex++
+
+        answers = questions[questionIndex].answer;
     
         questionElement.textContent = questions[questionIndex].question;
-        answerChoices.innerHTML = "";
+        answerChoices.textContent = "";
+        choices = "";
+
+        var choices = questions[questionIndex].choices;
     
-        var aChoices = questions[questionIndex].choices;
-    
-        for (var index = 0; index < aChoices.length; index++) {
+        for (var index = 0; index < choices.length; index++) {
 
             var next = document.createElement("button");
     
-            next.textContent = aChoices[index];
+            next.textContent = choices[index];
 
             answerButton = answerChoices.appendChild(next);
         }
@@ -73,10 +81,12 @@ function loadQuestions() {
  
     
 function checkAnswer() {
-}
-
-function assignPoints(){
-
+    if (answers === true) {
+        score = score +1;
+    }
+    if (answers === false) {
+       timeRemaining = timeRemaining -15;
+    }
 }
 
 function end() {
@@ -86,7 +96,6 @@ function end() {
 function recordScore(){
 
 }
-
 
 var questions = [{
     question: "Which property can you use in order to implement event delegation?",
@@ -129,4 +138,3 @@ var questions = [{
     answer: "Web APIs are built into your web browser and contain methods that allow us to manipulate a web page via JavaScript."
 }
 ]
-
