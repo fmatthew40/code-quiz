@@ -1,52 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Quiz</title>
     <link rel = "stylesheet" href ="./assets/css/style.css">
-
+    <title>Code Quiz</title>
 </head>
 <body>
-<main>
- 
-   
 
-    <!--Header that contains the highscore and timer-->
 
-    <header id="">
-        <div class="highscore">
-            <a href="">Highscores</a>
-        </div>
+        <!--Header that contains the highscore and timer-->
+    
+        <header id="">
+            <section class="timer-score">
+            <div class="highscore">
+                <a href="">Highscores</a>
+            </div>
+         
+    
+            <div id="timer" class="time-remaining">
+                Time Remaining: <span id="time-left">0</span>
+            </div>
+            </section>
+        </header>
+    
+        
+       <!-- BEGIN HIDDEN SECTIONS -->
+        <!--FIRST SECTION SWITCH-IN -->
 
-        <div id="timer" class="timer-section">
-            Time Remaining: <span id="time-left">0</span>
-        </div>
-    </header>
+        <!-- <section class="all-question" id="questions">
 
+            <div class="questions-list">
+
+                <div class="list-inner">
+
+                    <ul class="questions-ul">
+
+                        <h2 class="switch" id="question">Here is the question</h2>
+
+                        <li class="questions-li "><button id="answer-1" value="0" type="button"
+                                class="answer-btn">Answer-1</button></li>
+                        <li class="questions-li"><button id="answer-2" value="1" type="button"
+                                class="answer-btn ">Answer-2</button></li>
+                        <li class="questions-li"><button id="answer-3" value="2" type="button"
+                                class="answer-btn">Answer-3</button></li>
+                        <li class="questions-li"><button id="answer-4" value="3" type="button"
+                                class="answer-btn">Answer-4</button></li>
+                    </ul>
+
+                    <div id="right-wrong" class="font-weight-light font-italic"> -->
+
+                        <!-- <hr> RUSULTS WILL ADDED HERE VIA JS ONCE RAN -->
+                    <!--</div> -->
+                <!-- </div>
+            </div>
+        </section> --> 
+
+        
+    
+    <main class ="main" id= "main-box">
+        <section id = "title-p">    
     <h1>Coding Quiz</h1>
     <p> Try to answer the questions correctly.  Keep an eye on the timer. If you answer incorrectly, time will be erased from the timer. </p> 
-        <!--main introduction area -->
+        </section>
 
-    <main class="mainarea">
-        <div class="hidden" id="question-area" >
-            <div id= "qu">Questions Here</div>
-            <div id= "answer-selection" class="answer-btns" >
-                <button class = "btn">A</button>
-                <button class = "btn">B</button>
-                <button class = "btn">C</button>
-                <button class = "btn">D</button>
-            </div>
-            </div>
-            <div class = "start">
-        <button id="begin-quiz" class="srt-btn">Begin Quiz</button>
-            </div>
+        <section id="question-answers" class="question-answer">
+            
+                <div>
+                <h2 class="text-here" id="populate-questions">Questions Go Here!</h2>
+                <div class="answer-btns">
+                <button class="answer-choice" id="a1" value="0">Answer 1</button>
+                <button class="answer-choice" id="a2" value="1">Answer 2</button>
+                <button class="answer-choice" id="a3" value="3">Answer 3</button>
+                <button class="answer-choice" id="a4" value="4">Answer 4</button>
+                </div>
+                </div>
+                </section>
+                               
+                <!-- <div id="right-wrong">Results here</div> -->
+
+            <button id="begin-btn" class="begin-quiz">Begin Quiz</button>
         </div>
     </main>
 
 
-<script src = "./assets/js/script.js"></script>    
+    <script src = "./assets/js/script.js"></script>    
+    </body>
+    </html>
+    
 </body>
 </html>

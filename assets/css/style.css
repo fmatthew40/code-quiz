@@ -1,92 +1,82 @@
-/* <section id= "highscores">
-        <div>
-            <h3>
-                "Your score is " + 
-
-            </h3>
-        </div>
-    </section> */
-    /* <section id="quiz" class="quiz-area">
-    <div class="quiz-area2">
-        <div class= "questions"></div>
-        <h2 id="question-intro">C</h2>
-    </div>
-    </div>
-    <button class = "btn">A</button>
-    <button class = "btn">B</button>
-    <button class = "btn">C</button>
-    <button class = "btn">D</button>
-        <div>
-        </div id="begin" class="begin-button">Begin Quiz
-    </div>
-</section>
-body { */
 
 * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-
-h1 {
+.question-answer {
+   
+    max-width: 85%;
+    background-color:antiquewhite;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 11px 3px;
     text-align: center;
- 
+    align-content: center;
+    margin: auto;
 }
 
-p {
-    text-align: center;
-}
-
-.timer-section {
+.time-remaining {
+   
     text-align: right;
+    margin: -7px 0 0 0;
 }
-.mainarea {
-    background-color: rgb(195, 200, 211);
-    padding: 8px;
-    box-shadow: black;
-    box-shadow: 0 3px 6px 4px;
-    border: black solid;
+
+.answer-btns{
+    height: auto;
     width: 100%;
-    text-align: center;
-    border-radius: 4px;
-    width: 100%;
-}
-
-.btn:hover {
-    background-color: rgb(161, 208, 211);
-}
-
-.srt-btn:hover {
-    background-color: rgb(161, 208, 211);
-}
-
-.srt-btn {
-    font-size: 36px;
-    align-items: center;
-}
-
-.btn {
-border-radius: 8px;   
-}
-
- body {
-     padding: 2px;
-     display: flex;
-     align-items: center;
-     width: 100% ;
-     justify-content: center;
-     background-color: aquamarine;
- }
-
- .answer-btns {
     display: grid;
-    padding: 5px;
+    padding: 10px;
     align-items: center;
     justify-content: center;
-    margin: 5px;
+    margin: 6px;
     text-align: center;
-    height: 100px;
+ } 
+
+ .begin-quiz{
+    height: auto; 
+    width: 200px;
+    padding: 30px 10px;
+    margin: auto;
+    box-shadow: 0 0 6px 2px;
+    display: grid;
+    box-shadow: 0 0 6px 2px;
+    align-content: center;
+    margin: auto;  
+ } 
+
+ .begin-quiz:hover{
+     color: rgb(129, 184, 197); 
+ }
+.answer-choice{
+    height: auto;
     width: 100%;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 6px;
+    text-align: center;
+    box-shadow: 0 0 6px 2px;
+ } 
+
+ .answer-choice:hover{
+     color: rgb(129, 184, 197); 
  }
 
- .hidden {
-    display: none;
+ h1 {
+    text-align: center; 
+    font-size: 44px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
  }
+
+ h2 {
+     text-align: center; 
+ }
+ 
+ p {
+    text-align: center; 
+    font-size: 19px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ }
+
+.question-answer {
+    display: none;
+}
