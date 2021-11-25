@@ -92,4 +92,16 @@
     align-content: center;
     margin: auto;
 }
+
+.endofquiz {
+    max-width: 15%;
+    background-color:antiquewhite;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 11px 3px;
+    text-align: center;
+    align-content: center;
+    margin: auto;
+}
+
  

@@ -17,46 +17,12 @@
             <div class="highscore">
                 <a href="">Highscores</a>
             </div>
-         
-    
+        
             <div id="timer" class="time-remaining">
                 Time Remaining: <span id="time-left">0</span>
             </div>
             </section>
         </header>
-    
-        
-       <!-- BEGIN HIDDEN SECTIONS -->
-        <!--FIRST SECTION SWITCH-IN -->
-
-        <!-- <section class="all-question" id="questions">
-
-            <div class="questions-list">
-
-                <div class="list-inner">
-
-                    <ul class="questions-ul">
-
-                        <h2 class="switch" id="question">Here is the question</h2>
-
-                        <li class="questions-li "><button id="answer-1" value="0" type="button"
-                                class="answer-btn">Answer-1</button></li>
-                        <li class="questions-li"><button id="answer-2" value="1" type="button"
-                                class="answer-btn ">Answer-2</button></li>
-                        <li class="questions-li"><button id="answer-3" value="2" type="button"
-                                class="answer-btn">Answer-3</button></li>
-                        <li class="questions-li"><button id="answer-4" value="3" type="button"
-                                class="answer-btn">Answer-4</button></li>
-                    </ul>
-
-                    <div id="right-wrong" class="font-weight-light font-italic"> -->
-
-                        <!-- <hr> RUSULTS WILL ADDED HERE VIA JS ONCE RAN -->
-                    <!--</div> -->
-                <!-- </div>
-            </div>
-        </section> --> 
-
         
     
     <main class ="main" id= "main-box">
@@ -81,10 +47,26 @@
                 </section>
                                
             <button id="begin-btn" class="begin-quiz">Begin Quiz</button>
-            <div class="answer-results" id="results">Results here</div> 
+
+            <section id="results" class="question-answer">
+            <div class="answer-results" >Results here</div> 
+            </section>  
 
         </div>
     </main>
+
+    <section class="question-answer">
+        <div class="endofquiz">
+            <h3>End of Quiz!</h3>
+            <form>Enter Initials to Submit Your Score:</form>
+            <input type="text">
+            <button type="button" >Submit</button>
+            <!-- <div id="your-score">
+                <h4 id="your-score">Score</h4>
+
+            </div> -->
+        </div>
+    </section>
 
 
     <script src = "./assets/js/script.js"></script>    

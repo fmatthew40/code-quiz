@@ -13,7 +13,9 @@ let startTime = 79;
 var questionElement = document.getElementById('populate-question');
 var answerChoices = document.getElementById("populate-answers");
 let questionIndex = 0;
+
 var answers;
+var question;
 
 
 var score =0;
@@ -25,12 +27,12 @@ function openQuestionSection() {
    beginQuizButton.classList.add('question-answer')
    questionAnswerArea.classList.remove('question-answer');
    titleParagraph.classList.add('question-answer');
+   results.classList.remove('question-answer');
 
    loadQuestions();
 }
 
 var setTime = function () {
-    results.classList.remove('results');
 
         timeRemaining = 80;
     var checkTime = setInterval(function() {
@@ -61,9 +63,10 @@ function loadQuestions() {
     questionIndex++
 
         answers = questions[questionIndex].answer;
-    
-        questionElement.textContent = questions[questionIndex].question;
+
+        // questionElement.textContent = questions[questionIndex].question;
         answerChoices.textContent = "";
+        // answerChoices.textContent = questions[questionIndex].choices;
         choices = "";
 
         var choices = questions[questionIndex].choices;
