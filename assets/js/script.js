@@ -125,6 +125,7 @@ function checkAnswer(event) {
     if (answer === event.target.textContent) {
         score = score +1;
         results.textContent = "Correct!"
+    
     } else {
        timeRemaining = timeRemaining -15;
        results.textContent = "Incorrect!";

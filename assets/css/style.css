@@ -18,6 +18,7 @@
    
     text-align: right;
     margin: -7px 0 0 0;
+    padding: 15px;
 }
 
 .answer-btns{
@@ -48,7 +49,7 @@
  }
 .answer-choice{
     height: auto;
-    width: 100%;
+    width: 80%;
     padding: 10px;
     align-items: center;
     justify-content: center;
@@ -79,12 +80,12 @@
 
 .question-answer {
     display: none;
+    width: 15%;
 }
 
 .answer-results {
-   
-    max-width: 15%;
-    background-color:antiquewhite;
+    width: auto;
+    background-color:rgb(129, 184, 197);
     border-radius: 8px;
     padding: 10px;
     box-shadow: 0 0 11px 3px;
@@ -103,5 +104,27 @@
     align-content: center;
     margin: auto;
 }
+
+.content {
+    width: auto;
+    background-color:antiquewhite;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 11px 3px;
+    text-align: center;
+    align-content: center;
+    margin: auto;
+}
+
+.opening {
+        width: 80%;
+        background-color:antiquewhite;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 0 11px 3px;
+        text-align: center;
+        align-content: center;
+        margin: auto;
+    }
 
  
