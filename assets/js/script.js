@@ -56,45 +56,30 @@ var questions = [{
 ]
 
 
-beginQuizButton.addEventListener("click", openQuestionSection)
+beginQuizButton.addEventListener("click", openQuestionSection )
 
 function openQuestionSection() {
    beginQuizButton.classList.add('question-answer')
    questionAnswerArea.classList.remove('question-answer');
    titleParagraph.classList.add('question-answer');
    results.classList.remove('question-answer');
-
+   timeRemaining = 80;
+   timerEl.innerText = timeRemaining;
    loadQuestions();
+   setTime();
 }
 
 var setTime = function () {
-
-        timeRemaining = 80;
-    var checkTime = setInterval(function() {
+    timeRemaining = 80;
+        setInterval(function() {
+        timeRemaining--;
         timerEl.innerText = timeRemaining;
-        timeRemaining--
-
-        if (end) {
-            clearInterval(checkTime)
-        }
-       
-        if (timeRemaining < 0) {
-            score()
-            timerEl.innerText = 0
-            clearInterval(checkTime)
-        }
-
+        
         }, 1000)
-
     }
-       setTime();
-       setInterval();
-
-
-
     
 function loadQuestions() {
-
+    
     questionIndex++;
 
     questionElement.textContent = questions[questionIndex].question;
@@ -114,12 +99,16 @@ function loadQuestions() {
         next.addEventListener("click", checkAnswer);
 
         answerChoices.appendChild(next);
+        
     }
-
+    
     document.getElementById('results').style.display = "none";
 } 
     
+
 function checkAnswer(event) {
+  
+    
     var answer = questions[questionIndex].answer;
 
     if (answer === event.target.textContent) {
@@ -127,7 +116,7 @@ function checkAnswer(event) {
         results.textContent = "Correct!"
     
     } else {
-       timeRemaining = timeRemaining -15;
+       timeRemaining = timeRemaining -10;
        results.textContent = "Incorrect!";
     }
 
@@ -137,6 +126,10 @@ function checkAnswer(event) {
     }, 1500)
 }
 
+function checkTime() {
+
+}
+
 function end() {
 
 }
@@ -144,3 +137,18 @@ function end() {
 function recordScore(){
 
 }
+
+
+
+
+
+
+    // if (end) {
+        //     clearInterval(checkTime)
+        // }
+       
+        // if (timeRemaining < 0) {
+        //     score()
+        //     timerEl.innerText = 0
+        //     clearInterval(checkTime)
+        // }
