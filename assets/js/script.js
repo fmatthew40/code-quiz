@@ -5,9 +5,10 @@ var results = document.querySelector('.answer-results');
 
 var timerEl = document.getElementById('timer');
 var timeRemaining;
-let startTime = 79; 
+let startTime = 60; 
 
 var score = 0;
+let highScores = [];
 
 var questionElement = document.getElementById('populate-questions');
 var answerChoices = document.getElementById("populate-answers");
@@ -16,6 +17,8 @@ let questionIndex = -1;
 var answer;
 var question;
 
+var initials = document.getElementById('initials-input');
+var person = document.getElementById('initial-generation');
 
 
 var questions = [{
@@ -45,7 +48,7 @@ var questions = [{
 },
 {
     question: "What value would we add to setInterval() if we want a function called, myTimer() to run every 3 seconds?",
-    choices: ["SetInterval(myTimer, 3000)", "setInterval(myTimer, 300)", "setInterval(myTimer, 30)", "setInterval(myTimer, 3)"],
+    choices: ["setInterval(myTimer, 3000)", "setInterval(myTimer, 300)", "setInterval(myTimer, 30)", "setInterval(myTimer, 3)"],
     answer: "setInterval(myTimer, 3000)"
 },
 {
@@ -63,14 +66,14 @@ function openQuestionSection() {
    questionAnswerArea.classList.remove('question-answer');
    titleParagraph.classList.add('question-answer');
    results.classList.remove('question-answer');
-   timeRemaining = 80;
+   timeRemaining = 60;
    timerEl.innerText = timeRemaining;
    loadQuestions();
    setTime();
 }
 
 var setTime = function () {
-    timeRemaining = 80;
+    timeRemaining = 60;
         setInterval(function() {
         timeRemaining--;
         timerEl.innerText = timeRemaining;
@@ -100,6 +103,8 @@ function loadQuestions() {
 
         answerChoices.appendChild(next);
         
+        checkTime();
+checkQuestions();
     }
     
     document.getElementById('results').style.display = "none";
@@ -125,20 +130,87 @@ function checkAnswer(event) {
         loadQuestions()
     }, 1500)
 }
+checkTime();
 
 function checkTime() {
-
+    if (timeRemaining <= -1) {
+        window.alert("Your score is " + score + ".")
+        end(); 
+    }
 }
+
+function checkQuestions() {
+if (questionIndex === 7) {
+    end();
+}
+}
+
+checkTime();
+checkQuestions();
 
 function end() {
+questionAnswerArea.classList.add('question-answer');
+initials.classList.remove('question-answer');
+console.log("end");
+}
+// old code to save highscores
 
+// submit = document.getElementById('submit-initials');
+// // var person = document.getElementById('initial-generation').value;
+
+// var highscores = {
+//     score,
+//     person
+// };
+
+// var highscore = JSON.parse(localStorage.getItem("highscores")) || [];
+// function recordScore() {
+//     submit.addEventListener("click", function(){
+//         var person = document.getElementById('initial-generation').value;
+
+//     console.log("person");  
+
+
+    
+//     // localStorage.setItem("highscore", score);
+//     // localStorage.setItem("highscoreInitials",  document.getElementById('inititals').value);
+// });
+// }
+
+
+// highscore function
+submitButton = document.getElementById("submit-initials");
+function saveScore() {
+    var initialsEl = document.getElementById("initial-generation");
+    let newHighScore = {
+        initials: initialsEl.value,
+        highScore: score
+    };
+    highScores.push(newHighScore);
+    localStorage.setItem("scores",JSON.stringify(highScores));
+
+
+
+    seeScores();
+}
+submitButton.addEventListener("click", saveScore);
+
+checkTime();
+checkQuestions();
+
+
+var scoresUnhide = document.getElementById("hidden-scores")
+function seeScores() {
+scoresUnhide.classList.remove('hide');
+initials.classList.add('hide');
+
+
+
+// if (JSON.parse(localStorage.getItem('scores')) !== null) {
+//     highScores = JSON.parse(localStorage.getItem("scores"));
 }
 
-function recordScore(){
-
-}
-
-
+document.getElementById("hidden-scores").onclick = classList.remove('hide');
 
 
 

@@ -15,7 +15,7 @@
         <header id="">
             <section class="timer-score">
             <div class="highscore">
-                <a href="">Highscores</a>
+                <a href="#hidden-scores">Highscores</a>
             </div>
         
             <div id="timer" class="time-remaining">
@@ -55,17 +55,29 @@
         </div>
     </main>
 
-    <section class="question-answer">
+    <section id="initials-input" class="question-answer">
         <div class="endofquiz">
             <h3>End of Quiz!</h3>
             <form>Enter Initials to Submit Your Score:</form>
-            <input type="text">
-            <button type="button" >Submit</button>
-            <!-- <div id="your-score">
-                <h4 id="your-score">Score</h4>
-
-            </div> -->
+            <input id= "initial-generation" type="text" class="in">
+            <button id="submit-initials" type="button" >Submit</button>
         </div>
+    </section>
+
+    <section id="hidden-scores" class="hide">
+        <div class="high-scores">
+        <h3>Highscores</h3>
+        <ul class="ul1" id=view >
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <a href="index.html">Play Again</a>
+
+    </div>
     </section>
 
 

@@ -127,4 +127,26 @@
         margin: auto;
     }
 
- 
+ .in {
+     width: 50%;
+ }
+
+ .hide {
+     display: none;
+ }
+
+ .high-scores {
+    width: 20%;
+    background-color:antiquewhite;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 11px 3px;
+    text-align: center;
+    align-content: center;
+    margin: auto;
+}
+
+.ul1 {
+  align-content: center;
+  text-align: center; 
+}
