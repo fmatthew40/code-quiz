@@ -55,6 +55,11 @@ var questions = [{
     question: "Which of the following best describes a Web API?",
     choices: ["Web APIs are not built into the browser by default, and you generally have to retrieve their code and information from somewhere on the Web.", "Web APIs are a part of the JavaScript language itself and are built into your browser.", "Web APIs are low level code (say C or C++) that directly control the computer's GPU or other graphics functions.", "Web APIs are built into your web browser and contain methods that allow us to manipulate a web page via JavaScript."],
     answer: "Web APIs are built into your web browser and contain methods that allow us to manipulate a web page via JavaScript."
+},
+{
+    question: "Which property can you use in order to implement event delegation?",
+    choices: ["event.preventDefault()", "event.stopPropagation()", "event.target", "event.addEventListener()"],
+    answer: "event.target"
 }
 ]
 
@@ -77,7 +82,11 @@ var setTime = function () {
         setInterval(function() {
         timeRemaining--;
         timerEl.innerText = timeRemaining;
-        
+        if (timeRemaining <=0) {
+            end();
+            clearInterval(timeRemaining);
+            timeRemaining = 0;
+        }
         }, 1000)
     }
     
@@ -130,12 +139,11 @@ function checkAnswer(event) {
         loadQuestions()
     }, 1500)
 }
-checkTime();
 
 function checkTime() {
-    if (timeRemaining <= -1) {
-        window.alert("Your score is " + score + ".")
+    if (timeRemaining <= 0) {
         end(); 
+    
     }
 }
 
@@ -151,76 +159,47 @@ checkQuestions();
 function end() {
 questionAnswerArea.classList.add('question-answer');
 initials.classList.remove('question-answer');
-console.log("end");
+
+timerEl.innerText = 0;
+
 }
-// old code to save highscores
-
-// submit = document.getElementById('submit-initials');
-// // var person = document.getElementById('initial-generation').value;
-
-// var highscores = {
-//     score,
-//     person
-// };
-
-// var highscore = JSON.parse(localStorage.getItem("highscores")) || [];
-// function recordScore() {
-//     submit.addEventListener("click", function(){
-//         var person = document.getElementById('initial-generation').value;
-
-//     console.log("person");  
 
 
-    
-//     // localStorage.setItem("highscore", score);
-//     // localStorage.setItem("highscoreInitials",  document.getElementById('inititals').value);
-// });
-// }
 
-
-// highscore function
 submitButton = document.getElementById("submit-initials");
+
+
+var initialsBox = document.getElementById("initial-generation");
+let listScores = {
+    initials: initialsBox.value,
+    highScore: score
+};
+
 function saveScore() {
-    var initialsEl = document.getElementById("initial-generation");
-    let newHighScore = {
-        initials: initialsEl.value,
+    let listScores = {
+        initials: initialsBox.value,
         highScore: score
-    };
-    highScores.push(newHighScore);
-    localStorage.setItem("scores",JSON.stringify(highScores));
-
-
+};
+    highScores.push(listScores);
+    localStorage.setItem("scores",JSON.stringify(highScores)) || [];
 
     seeScores();
 }
+checkQuestions();
 submitButton.addEventListener("click", saveScore);
 
-checkTime();
-checkQuestions();
-
+var scoreList = document.getElementById("view");
 
 var scoresUnhide = document.getElementById("hidden-scores")
+
 function seeScores() {
 scoresUnhide.classList.remove('hide');
 initials.classList.add('hide');
 
+localStorage.getItem("scores",JSON.stringify[highScores]);
 
+for (i=0; i<highScores.length; i++) {
+   scoreList.innerHTML = highScores[i].initials + " got " + highScores[i].highScore + " points!";
 
-// if (JSON.parse(localStorage.getItem('scores')) !== null) {
-//     highScores = JSON.parse(localStorage.getItem("scores"));
 }
-
-document.getElementById("hidden-scores").onclick = classList.remove('hide');
-
-
-
-
-    // if (end) {
-        //     clearInterval(checkTime)
-        // }
-       
-        // if (timeRemaining < 0) {
-        //     score()
-        //     timerEl.innerText = 0
-        //     clearInterval(checkTime)
-        // }
+}
