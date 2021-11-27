@@ -151,6 +151,7 @@ if (questionIndex === 7) {
 }
 }
 
+
 checkTime();
 checkQuestions();
 
