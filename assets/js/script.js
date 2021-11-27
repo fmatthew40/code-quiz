@@ -96,8 +96,6 @@ function loadQuestions() {
 
     questionElement.textContent = questions[questionIndex].question;
     answerChoices.textContent = "";
-
-    // answerChoices.textContent = questions[questionIndex].choices;
     
     var choices = questions[questionIndex].choices;
 
@@ -157,6 +155,8 @@ checkTime();
 checkQuestions();
 
 function end() {
+finalScoreArea.classList.remove('question-answer');
+finalScore.innerText = "Your score is " + score + "!";
 questionAnswerArea.classList.add('question-answer');
 initials.classList.remove('question-answer');
 
@@ -164,24 +164,27 @@ timerEl.innerText = 0;
 
 }
 
-
-
+finalScoreArea = document.getElementById("final");
 submitButton = document.getElementById("submit-initials");
 
 
 var initialsBox = document.getElementById("initial-generation");
+
 let listScores = {
     initials: initialsBox.value,
     highScore: score
 };
 
 function saveScore() {
-    let listScores = {
+
+   var listScores = {
         initials: initialsBox.value,
         highScore: score
-};
-    highScores.push(listScores);
-    localStorage.setItem("scores",JSON.stringify(highScores)) || [];
+}
+highScores.push(listScores);
+    window.localStorage.setItem('userRecord', JSON.stringify(listScores));
+    // highScores.push(listScores);
+    // localStorage.setItem("scores",JSON.stringify(highScores)) || [];
 
     seeScores();
 }
@@ -189,6 +192,8 @@ checkQuestions();
 submitButton.addEventListener("click", saveScore);
 
 var scoreList = document.getElementById("view");
+var finalScore = document.getElementById("final-score")
+var outputL = document.getElementById('view2');
 
 var scoresUnhide = document.getElementById("hidden-scores")
 
@@ -196,10 +201,14 @@ function seeScores() {
 scoresUnhide.classList.remove('hide');
 initials.classList.add('hide');
 
-localStorage.getItem("scores",JSON.stringify[highScores]);
+// localStorage.getItem("scores",JSON.stringify[highScores]);
+window.localStorage.getItem('userRecord');
+JSON.parse(window.localStorage.getItem('userRecord'));
+
+scoreList.innerHTML = "userRecord";
 
 for (i=0; i<highScores.length; i++) {
    scoreList.innerHTML = highScores[i].initials + " got " + highScores[i].highScore + " points!";
-
-}
+   outputL.innerHTML = highScores[i].initials + " got " + highScores[i].highScore + " points!";
+};
 }
