@@ -116,7 +116,10 @@ checkQuestions();
     
     document.getElementById('results').style.display = "none";
 } 
-    
+    document.getElementById('highscoresButton');
+highscoresButton.addEventListener("click", function() {
+    scoresUnhide.classList.remove('hide');
+});
 
 function checkAnswer(event) {
   
@@ -182,10 +185,11 @@ function saveScore() {
         initials: initialsBox.value,
         highScore: score
 }
-highScores.push(listScores);
-    window.localStorage.setItem('userRecord', JSON.stringify(listScores));
-    // highScores.push(listScores);
-    // localStorage.setItem("scores",JSON.stringify(highScores)) || [];
+localStorage.setItem("name", initials);
+    localStorage.setItem("highscore", score);
+    highScores.push(listScores);
+   window.localStorage.setItem('userRecord', JSON.stringify(listScores));
+    
 
     seeScores();
 }
@@ -203,10 +207,10 @@ scoresUnhide.classList.remove('hide');
 initials.classList.add('hide');
 
 // localStorage.getItem("scores",JSON.stringify[highScores]);
-window.localStorage.getItem('userRecord');
-JSON.parse(window.localStorage.getItem('userRecord'));
+window.localStorage.getItem('highscores');
+JSON.parse(window.localStorage.getItem('highscores'));
 
-scoreList.innerHTML = "userRecord";
+scoreList.innerHTML = "highscores";
 
 for (i=0; i<highScores.length; i++) {
    scoreList.innerHTML = highScores[i].initials + " got " + highScores[i].highScore + " points!";
