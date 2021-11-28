@@ -206,9 +206,10 @@ function seeScores() {
 scoresUnhide.classList.remove('hide');
 initials.classList.add('hide');
 
-// localStorage.getItem("scores",JSON.stringify[highScores]);
-window.localStorage.getItem('highscores');
-JSON.parse(window.localStorage.getItem('highscores'));
+localStorage.getItem("highscores",JSON.stringify[highScores]);
+// window.localStorage.getItem('highscores');
+// JSON.parse(window.localStorage.getItem('highscores'));
+
 
 scoreList.innerHTML = "highscores";
 
