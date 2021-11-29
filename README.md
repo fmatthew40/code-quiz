@@ -7,4 +7,4 @@ My task was to create a quiz that would rotate through questions.  First, I assi
 https://fmatthew40.github.io/code-quiz/
 
 # Technologies Used: 
-Javasctipt and HTML
+Javasctipt, CSS,and HTML
