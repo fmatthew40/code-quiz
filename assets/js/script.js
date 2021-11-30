@@ -8,7 +8,7 @@ var timeRemaining;
 let startTime = 60; 
 
 var score = 0;
-let highScores = [];
+var highScores = [];
 
 var questionElement = document.getElementById('populate-questions');
 var answerChoices = document.getElementById("populate-answers");
@@ -64,8 +64,21 @@ var questions = [{
 ]
 scoresUnhide = document.getElementById('hidden-scores');
 highScoresButton = document.getElementById('highscoresButton');
+
 highscoresButton.addEventListener("click", function() {
-    scoresUnhide.classList.remove('hide'); });
+    scoresUnhide.classList.remove('hide'); 
+
+    // var li = document.createElement("li");
+    // scoreList.appendChild(li);
+
+    scoreList.innerHTML =(localStorage.getItem('highScores'));
+
+    // li.innerHTML =(localStorage.getItem('highScores'));
+    // seeResults ()
+    // highScores[i].initials + " scored " + highScores[i].highScore
+    
+
+});
 
 beginQuizButton.addEventListener("click", openQuestionSection )
 
@@ -180,19 +193,9 @@ submitButton = document.getElementById("submit-initials");
 
 
 var initialsBox = document.getElementById("initial-generation");
-let listScores = {
-    initials: initialsBox.value,
-    highScore: score
-};
+
 
 function saveScore() {
-    let listScores = {
-        initials: initialsBox.value,
-        highScore: score
-};
-    highScores.push(listScores);
-    localStorage.setItem("scores",JSON.stringify(listScores)) || [];
-
     seeScores();
 }
 checkQuestions();
@@ -202,15 +205,33 @@ var scoreList = document.getElementById("view");
 var finalScore = document.getElementById("final-score")
 var scoresUnhide = document.getElementById("hidden-scores")
 
+
 function seeScores() {
 scoresUnhide.classList.remove('hide');
 initials.classList.add('hide');
+var listScores = {
+    initials: initialsBox.value,
+    highScore: score
+};
+highScores.push(listScores);
+localStorage.setItem('highScores', JSON.stringify(listScores));
 
-JSON.parse(localStorage.getItem("scores"));
-var li = document.createElement("li");
+seeResults();
+};
+
+
+function seeResults (){
+
+// var li = document.createElement("li");
+// scoreList.appendChild(li);
+
+JSON.parse(localStorage.getItem('highScores'));
+
 
 for (i=0; i<highScores.length; i++) {
-   li.innerHTML = highScores[i].initials + " got " + highScores[i].highScore + " points!";
-    scoreList.appendChild(li);
- }
+
+scoreList.innerHTML = highScores[i].initials + " scored " + highScores[i].highScore + "!";
+// li.innerHTML = highScores[i].initials + " scored " + highScores[i].highScore + "!";
+
+ };
 }
