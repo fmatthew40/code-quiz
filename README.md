@@ -8,3 +8,6 @@ https://fmatthew40.github.io/code-quiz/
 
 # Technologies Used: 
 Javasctipt, CSS,and HTML
+
+## Questions:
+If you have any questions, you can email me at fmatthew40@gmail.com.
