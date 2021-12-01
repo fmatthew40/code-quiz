@@ -194,27 +194,41 @@ submitButton = document.getElementById("submit-initials");
 
 var initialsBox = document.getElementById("initial-generation");
 
+// submitButton.addEventListener("click", saveScore);
+
+submitButton.addEventListener("click", function() {
+
+    var listScores = {
+        initials: initialsBox.value,
+        highScore: score};
+
+    highScores.push(listScores);
+    localStorage.setItem('highScores', JSON.stringify(listScores));
+
+    saveScore();
+});
+
 
 function saveScore() {
     seeScores();
 }
 checkQuestions();
-submitButton.addEventListener("click", saveScore);
 
 var scoreList = document.getElementById("view");
 var finalScore = document.getElementById("final-score")
 var scoresUnhide = document.getElementById("hidden-scores")
 
-
 function seeScores() {
 scoresUnhide.classList.remove('hide');
 initials.classList.add('hide');
-var listScores = {
-    initials: initialsBox.value,
-    highScore: score
-};
-highScores.push(listScores);
-localStorage.setItem('highScores', JSON.stringify(listScores));
+// var listScores = {
+//     initials: initialsBox.value,
+//     highScore: score
+// };
+
+// highScores.push(listScores);
+// localStorage.setItem(highScores, JSON.stringify([listScores]));
+
 
 seeResults();
 };
