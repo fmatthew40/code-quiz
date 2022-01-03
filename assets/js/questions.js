@@ -1,3 +1,4 @@
+
 var questions = [{
     question: "Which property can you use in order to implement event delegation?",
     choices: ["event.preventDefault()", "event.stopPropagation()", "event.target", "event.addEventListener()"],
