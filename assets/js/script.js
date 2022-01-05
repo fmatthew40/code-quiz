@@ -74,12 +74,10 @@ highscoresButton.addEventListener("click", function() {
     scoreList.innerText =(localStorage.getItem('highScores'));
     // localStorage.getItem('highScores', JSON.parse(listScores));
 
-
     // li.innerHTML =(localStorage.getItem('highScores'));
     // seeResults ()
     // highScores[i].initials + " scored " + highScores[i].highScore
     
-
 });
 
 beginQuizButton.addEventListener("click", openQuestionSection )
@@ -138,10 +136,8 @@ checkQuestions();
     document.getElementById('results').style.display = "none";
 } 
     
-
 function checkAnswer(event) {
   
-    
     var answer = questions[questionIndex].answer;
 
     if (answer === event.target.textContent) {
@@ -162,7 +158,6 @@ function checkAnswer(event) {
 function checkTime() {
     if (timeRemaining <= 0) {
         end();
-    
     }
 }
 
@@ -177,7 +172,6 @@ if (questionIndex === 7) {
 checkTime();
 checkQuestions();
 
-
 function end() {
     finalScoreArea.classList.remove('question-answer');
 finalScore.innerText = "Your score is " + score + "!";
@@ -185,9 +179,7 @@ finalScore.innerText = "Your score is " + score + "!";
     initials.classList.remove('question-answer');
 
 timerEl.innerText = 0;
-
 }
-
 
 finalScoreArea = document.getElementById("final");
 
