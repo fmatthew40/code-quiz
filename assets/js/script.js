@@ -201,7 +201,6 @@ submitButton.addEventListener("click", function() {
     saveScore();
 });
 
-
 function saveScore() {
     seeScores();
 }
@@ -222,10 +221,8 @@ initials.classList.add('hide');
 // highScores.push(listScores);
 // localStorage.setItem(highScores, JSON.stringify([listScores]));
 
-
 seeResults();
 };
-
 
 function seeResults (){
 
@@ -233,7 +230,6 @@ function seeResults (){
 // scoreList.appendChild(li);
 
 JSON.parse(localStorage.getItem('highScores'));
-
 
 for (i=0; i<highScores.length; i++) {
 
