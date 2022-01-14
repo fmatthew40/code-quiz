@@ -5,3 +5,6 @@ My task was to create a quiz that would rotate through questions.  First, I assi
 
 # Link to Application:
 https://fmatthew40.github.io/code-quiz/
+
+# Technologies Used: 
+Javasctipt and HTML

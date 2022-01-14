@@ -71,7 +71,9 @@ highscoresButton.addEventListener("click", function() {
     // var li = document.createElement("li");
     // scoreList.appendChild(li);
 
-    scoreList.innerHTML =(localStorage.getItem('highScores'));
+    scoreList.innerText =(localStorage.getItem('highScores'));
+    // localStorage.getItem('highScores', JSON.parse(listScores));
+
 
     // li.innerHTML =(localStorage.getItem('highScores'));
     // seeResults ()
@@ -197,7 +199,6 @@ var initialsBox = document.getElementById("initial-generation");
 // submitButton.addEventListener("click", saveScore);
 
 submitButton.addEventListener("click", function() {
-
     var listScores = {
         initials: initialsBox.value,
         highScore: score};
